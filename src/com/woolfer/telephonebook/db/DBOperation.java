@@ -1,11 +1,13 @@
-package com;
+package com.woolfer.telephonebook.db;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChangeDB {
+import com.woolfer.telephonebook.contact.Contact;
+
+public class DBOperation {
 
 	public static int addToDB(String Firstname, String LastName,
 			String PhoneNumber) throws SQLException, IOException {
@@ -13,7 +15,7 @@ public class ChangeDB {
 		PreparedStatement prStAddToDB = null;
 		String query = "INSERT INTO `mobilephone` VALUES (?, ?, ?, null)";
 
-		Connection conn = ConnectDB.getConnection();
+		Connection conn = DBConnection.getConnection();
 		try {
 			conn.setAutoCommit(false);
 			prStAddToDB = conn.prepareStatement(query);
@@ -47,7 +49,7 @@ public class ChangeDB {
 		Connection conn = null;
 		List<Contact> listPhoneBook = null;
 		try {
-			conn = ConnectDB.getConnection();
+			conn = DBConnection.getConnection();
 
 			String query = "SELECT * FROM  `mobilephone`";
 
@@ -60,9 +62,7 @@ public class ChangeDB {
 				listPhoneBook = new ArrayList<Contact>(numberOfRecords);
 
 				do {
-					listPhoneBook.add(new Contact(result.getString(1), result
-							.getString(2), result.getString(3), result
-							.getInt(4)));
+					listPhoneBook.add(new Contact(result.getString(1), result.getString(2), result.getString(3), result.getInt(4)));
 				} while (result.next());
 				result.close();
 
@@ -85,7 +85,7 @@ public class ChangeDB {
 		boolean isDel = false;
 		PreparedStatement prStDelRow = null;
 		String query = "DELETE FROM `mobilephone` WHERE id=?";
-		Connection conn = ConnectDB.getConnection();
+		Connection conn = DBConnection.getConnection();
 
 		try {
 			conn.setAutoCommit(false);
@@ -121,7 +121,7 @@ public class ChangeDB {
 		String query = "SELECT * FROM `mobilephone` WHERE id=?";
 
 		try {
-			conn = ConnectDB.getConnection();
+			conn = DBConnection.getConnection();
 			conn.setAutoCommit(false);
 			prStGetRow = conn.prepareStatement(query);
 			prStGetRow.setString(1, id);
@@ -159,7 +159,7 @@ public class ChangeDB {
 		String query = "UPDATE `mobilephone` SET `firstname`=?,`lastname`=?,`mobilephone`=? WHERE `id`=?";
 
 		try {
-			conn = ConnectDB.getConnection();
+			conn = DBConnection.getConnection();
 			conn.setAutoCommit(false);
 			prStChangeRow = conn.prepareStatement(query);
 			prStChangeRow.setString(1, FirstName);

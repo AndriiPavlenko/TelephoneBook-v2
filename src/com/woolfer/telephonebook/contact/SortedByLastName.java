@@ -1,6 +1,7 @@
-package com;
+package com.woolfer.telephonebook.contact;
 
 import java.util.Comparator;
+
 
 public class SortedByLastName implements Comparator<Contact>{
 

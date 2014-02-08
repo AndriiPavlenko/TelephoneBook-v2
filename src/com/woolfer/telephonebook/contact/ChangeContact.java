@@ -1,4 +1,4 @@
-package com;
+package com.woolfer.telephonebook.contact;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.woolfer.telephonebook.db.DBOperation;
 
 public class ChangeContact extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -23,7 +25,7 @@ public class ChangeContact extends HttpServlet {
 
 		if (actionDelete != null) {
 			try {
-				if (ChangeDB.delRow(id)) {
+				if (DBOperation.delRow(id)) {
 					out.println("Contact was SUCCESSFULLY deleted.");
 				} else {
 					out.println("Contact is NOT deleted..");
@@ -37,7 +39,7 @@ public class ChangeContact extends HttpServlet {
 			String FirstName = request.getParameter("FirstName");
 			String LastName = request.getParameter("LastName");
 			String PhoneNumber = request.getParameter("PhoneNumber");
-			if (ChangeDB.changeRow(id, FirstName, LastName, PhoneNumber)) {
+			if (DBOperation.changeRow(id, FirstName, LastName, PhoneNumber)) {
 				out.println("Contact was SUCCESSFULLY changed.");
 			} else {
 				out.println("Contact is NOT changed..");

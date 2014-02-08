@@ -13,9 +13,11 @@
 <b> Are you sure to delete this contact ? </b>
 <br><br>
 
-<%@ page import="com.*" %>
-<% 	String id = request.getParameter("id");
-	Contact contactID = ChangeDB.getRow(id);
+<%@ page import="com.woolfer.telephonebook.contact.*"%>
+<%@ page import="com.woolfer.telephonebook.db.*"%>
+<%
+	String id = request.getParameter("id");
+	Contact contactID = DBOperation.getRow(id);
 	if (contactID != null) {
 %>
 	<input name="id" type="hidden" value="<%= contactID.getId()%>">

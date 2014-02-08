@@ -13,7 +13,7 @@
     <description></description>
     <display-name>AddServlet</display-name>
     <servlet-name>AddServlet</servlet-name>
-    <servlet-class>com.AddServlet</servlet-class>
+    <servlet-class>com.woolfer.telephonebook.AddServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddServlet</servlet-name>
@@ -23,7 +23,7 @@
     <description></description>
     <display-name>ChangeServlet</display-name>
     <servlet-name>ChangeServlet</servlet-name>
-    <servlet-class>com.ChangeServlet</servlet-class>
+    <servlet-class>com.woolfer.telephonebook.ChangeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ChangeServlet</servlet-name>
@@ -33,7 +33,7 @@
     <description></description>
     <display-name>ChangeContact</display-name>
     <servlet-name>ChangeContact</servlet-name>
-    <servlet-class>com.ChangeContact</servlet-class>
+    <servlet-class>com.woolfer.telephonebook.contact.ChangeContact</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ChangeContact</servlet-name>

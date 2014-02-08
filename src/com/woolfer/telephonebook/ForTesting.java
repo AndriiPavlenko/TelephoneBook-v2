@@ -1,6 +1,8 @@
-package com;
+package com.woolfer.telephonebook;
 
 import java.awt.List;
+
+import com.woolfer.telephonebook.contact.Contact;
 
 public class ForTesting {
 	public static void main(String[] args) {

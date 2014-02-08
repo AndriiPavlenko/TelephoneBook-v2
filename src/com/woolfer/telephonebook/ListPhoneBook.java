@@ -1,7 +1,13 @@
-package com;
+package com.woolfer.telephonebook;
 
 import java.util.Collections;
 import java.util.List;
+
+import com.woolfer.telephonebook.contact.Contact;
+import com.woolfer.telephonebook.contact.SortedByFirstName;
+import com.woolfer.telephonebook.contact.SortedByLastName;
+import com.woolfer.telephonebook.contact.SortedByPhoneNumber;
+import com.woolfer.telephonebook.db.DBOperation;
 
 public class ListPhoneBook {
 	private List<Contact> listPhoneBook = null;
@@ -10,7 +16,7 @@ public class ListPhoneBook {
 	public static boolean sortByPhoneNumber;
 
 	public ListPhoneBook() {
-		listPhoneBook = ChangeDB.getPhoneBook();
+		listPhoneBook = DBOperation.getPhoneBook();
 //		sortByName = false;
 //		sortByLastName = false;
 //		sortByPhoneNumber = false;

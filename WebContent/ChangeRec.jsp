@@ -11,11 +11,12 @@
 		<form name="Form1" method="POST"
 			action="./ChangeContact">
 			
-			<%@ page import="com.*"%>
+			<%@ page import="com.woolfer.telephonebook.contact.*"%>
+			<%@ page import="com.woolfer.telephonebook.db.*"%>
 			<%
 				String id = request.getParameter("id");
-				Contact contactID = ChangeDB.getRow(id);
-				if (contactID != null) {
+					Contact contactID = DBOperation.getRow(id);
+					if (contactID != null) {
 			%>
 			<input name="id" type="hidden" value="<%= contactID.getId()%>">
 			<table>

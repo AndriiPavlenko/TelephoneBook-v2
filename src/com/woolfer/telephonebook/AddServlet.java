@@ -1,8 +1,10 @@
-package com;
+package com.woolfer.telephonebook;
 import java.io.*;
 import java.sql.SQLException;
 import javax.servlet.*;
 import javax.servlet.http.*;
+
+import com.woolfer.telephonebook.db.DBOperation;
 
 
 public class AddServlet extends HttpServlet {
@@ -15,7 +17,7 @@ public class AddServlet extends HttpServlet {
 		String PhoneNumber = request.getParameter("PhoneNumber");
 		
 		try {
-			ChangeDB.addToDB(FirstName, LastName, PhoneNumber);
+			DBOperation.addToDB(FirstName, LastName, PhoneNumber);
 			out.println("<center><br> Contact: " + FirstName + " " + LastName + ": " + PhoneNumber + "<br> SUCCESSFULLY added!<br>");
 			out.println("<input type=\"button\" value=\"Close\" onclick=\"self.close()\">");
 		} catch (SQLException e) {

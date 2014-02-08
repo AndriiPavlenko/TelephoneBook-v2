@@ -1,4 +1,4 @@
-package com;
+package com.woolfer.telephonebook.contact;
 
 public class Contact {
 	private String FirstName;
@@ -6,7 +6,7 @@ public class Contact {
 	private String PhoneNumber;
 	private int id;
 	
-	Contact(String FirstName, String LastName, String PhoneNumber, int id) {
+	public Contact(String FirstName, String LastName, String PhoneNumber, int id) {
 		this.FirstName = FirstName;
 		this.LastName =LastName;
 		this.PhoneNumber = PhoneNumber;

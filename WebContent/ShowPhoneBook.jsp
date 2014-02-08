@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Telephone book v.2.0</title>
 <link rel="stylesheet" href="./css/style.css" type="text/css">
-<jsp:useBean id="PhoneBook" class="com.ListPhoneBook">
+<jsp:useBean id="PhoneBook" class="com.woolfer.telephonebook.ListPhoneBook">
 	
 </jsp:useBean>
 </head>
