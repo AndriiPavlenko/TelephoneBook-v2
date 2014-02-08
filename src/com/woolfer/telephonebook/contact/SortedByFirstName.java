@@ -2,7 +2,6 @@ package com.woolfer.telephonebook.contact;
 
 import java.util.Comparator;
 
-
 public class SortedByFirstName implements Comparator<Contact>{
 
 	@Override
@@ -12,5 +11,4 @@ public class SortedByFirstName implements Comparator<Contact>{
 		
 		return firstName1.compareTo(firstName2);
 	}
-
 }

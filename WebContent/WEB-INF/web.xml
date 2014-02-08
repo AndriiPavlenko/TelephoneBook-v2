@@ -13,7 +13,7 @@
     <description></description>
     <display-name>AddServlet</display-name>
     <servlet-name>AddServlet</servlet-name>
-    <servlet-class>com.woolfer.telephonebook.AddServlet</servlet-class>
+    <servlet-class>com.woolfer.telephonebook.ContactAddition</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AddServlet</servlet-name>
@@ -23,7 +23,7 @@
     <description></description>
     <display-name>ChangeServlet</display-name>
     <servlet-name>ChangeServlet</servlet-name>
-    <servlet-class>com.woolfer.telephonebook.ChangeServlet</servlet-class>
+    <servlet-class>com.woolfer.telephonebook.ContactModification</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ChangeServlet</servlet-name>
@@ -43,7 +43,7 @@
   <filter>
     <display-name>FilterForInputText</display-name>
     <filter-name>FilterForInputText</filter-name>
-    <filter-class>textFilters.Filter</filter-class>
+    <filter-class>com.woolfer.telephonebook.filters.Filter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>FilterForInputText</filter-name>

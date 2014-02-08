@@ -17,9 +17,6 @@ public class ListPhoneBook {
 
 	public ListPhoneBook() {
 		listPhoneBook = DBOperation.getPhoneBook();
-//		sortByName = false;
-//		sortByLastName = false;
-//		sortByPhoneNumber = false;
 	}
 
 	public List<Contact> getListOfPhoneBook() {
@@ -34,7 +31,6 @@ public class ListPhoneBook {
 				Collections.sort(listPhoneBook, Collections.reverseOrder(new SortedByFirstName()));
 				sortByName = false;
 			}
-		
 	}
 	
 	public String getIsSortByName() {
