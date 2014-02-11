@@ -4,10 +4,10 @@ import java.util.Collections;
 import java.util.List;
 
 import com.woolfer.telephonebook.contact.Contact;
-import com.woolfer.telephonebook.contact.SortedByFirstName;
-import com.woolfer.telephonebook.contact.SortedByLastName;
-import com.woolfer.telephonebook.contact.SortedByPhoneNumber;
 import com.woolfer.telephonebook.db.DBOperation;
+import com.woolfer.telephonebook.sorting.SortedByFirstName;
+import com.woolfer.telephonebook.sorting.SortedByLastName;
+import com.woolfer.telephonebook.sorting.SortedByPhoneNumber;
 
 public class ListPhoneBook {
 	private List<Contact> listPhoneBook = null;
